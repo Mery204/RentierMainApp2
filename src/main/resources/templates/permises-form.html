@@ -2,9 +2,46 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Permises form</title>
+</head>
+<body>
+<h1>Formularz dodania Wynajmowanych Lokali</h1>
+<div th:replace="fragments :: navigator"></div>
+<form th:action="@{/permises/add}" th:method="post" th:object="${newPermises}">
+    <input type="hidden" th:field="*{id}">
+    Nazwa komercyjna lokalu <input th:field="*{name}"/>
+    <br/>
+    Kraj <input th:field="*{country}"/>
+    <br/>
+    Miasto: <input type="checkbox"th:field="*{city}"/>
+    <br/>
+    Nazwa ulicy: <input type="number" step="0.01" min="0"th:field="*{streetName}"/>
+    <br/>
+    <br/>
+    Numer budynku: <input type="number" step="0.01" min="0"th:field="*{buildingNo}"/>
+    <br/>
+    <br/>
+    Numer mieszkania: <input type="number" step="0.01" min="0"th:field="*{flatNo}"/>
+    <br/>
+    <br/>
+    Numer pokoju: <input type="number" step="0.01" min="0"th:field="*{roomNo}"/>
+    <br/>
+    <br/>
+    Kod pocztowy: <input type="number" step="0.01" min="0"th:field="*{postCode}"/>
+    <br/>
+    <input type="prześlij do formularza">
+</form>
 </body>
 </html>

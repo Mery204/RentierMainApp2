@@ -1,10 +1,45 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"-->
+<!--        "http://www.w3.org/TR/html4/loose.dtd">-->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Landlord List</title>
+    <style>
+        td {
+            border: 1px solid #000;
+        }
+        table {
+            border: 1px solid #000;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h1>Lista Wynajmujących</h1>
+<div th:replace="fragments :: navigator"></div>
+<br/>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>Adres Email</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="landlord : ${listOfLandlords}">
+        <td th:text="${landlord.id}"></td>
+        <td th:text="${landlord.name}"></td>
+        <td th:text="${landlord.surname}"></td>
+        <td th:text="${landlord.email}"></td>
+
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

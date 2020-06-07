@@ -1,4 +1,4 @@
 package com.rentier.rentierapp.service;
 
-public class PermisesRepository {
+public class PermisesService {
 }

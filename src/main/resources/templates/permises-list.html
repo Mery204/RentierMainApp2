@@ -1,10 +1,51 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"-->
+<!--        "http://www.w3.org/TR/html4/loose.dtd">-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Permises List</title>
+    <style>
+        td {
+            border: 1px solid #000;
+        }
+        table {
+            border: 1px solid #000;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h1>Lista Wynajmowanych Lokali</h1>
+<div th:replace="fragments :: navigator"></div>
+<br/>
+<table>
+    <thead>
+    <tr>
+        <th>Nazwa komercyjna lokalu</th>
+        <th>Kraj</th>
+        <th>Miasto</th>
+        <th>Nazwa ulicy</th>
+        <th>Numer budynku</th>
+        <th>Numer pokoju</th>
+        <th>Numer mieszkania</th>
+        <th>Kod pocztowy</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="landlord : ${listOfLandlords}">
+        <td th:text="${permises.id}"></td>
+        <td th:text="${permises.name}"></td>
+        <td th:text="${permises.country}"></td>
+        <td th:text="${permises.city}"></td>
+        <td th:text="${permises.streetNo}"></td>
+        <td th:text="${permises.buidingNo}"></td>
+        <td th:text="${permises.flatNo}"></td>
+        <td th:text="${permises.roomNo}"></td>
+        <td th:text="${permises.postCode}"></td>
+
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
