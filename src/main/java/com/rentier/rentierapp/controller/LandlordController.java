@@ -1,6 +1,6 @@
 package com.rentier.rentierapp.controller;
 
-import com.rentier.rentierapp.model.Landlord;
+import com.rentier.rentierapp.model.LandlordForm;
 import com.rentier.rentierapp.service.LandlordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +16,12 @@ public class LandlordController {
 
     @GetMapping("/add")
     public String landlordAdd(Model model) {
-        model.addAttribute("newLandlord", new Landlord());
+        model.addAttribute("newLandlord", new LandlordForm());
         return "landlord_form";
     }
 
     @PostMapping("/add")
-    public String landlordAdd(Landlord landlord) {
+    public String landlordAdd(LandlordForm landlord) {
 
         landlordService.add(landlord);
         return "redirect:/landlord/list";

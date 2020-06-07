@@ -8,7 +8,7 @@
 <h1>Formularz dodania Wynajmujących</h1>
 <div th:replace="fragments :: navigator"></div>
 <form th:action="@{/landlord/add}" th:method="post" th:object="${newLandlord}">
-    <input type="hidden" th:field="*{id}">
+
     Imie: <input th:field="*{name}"/>
     <br/>
     Nazwisko: <input th:field="*{surname}"/>

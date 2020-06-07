@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 
 
-public class Landlord implements IBaseEntity {
+public class Landlord {
 
 
     @Id
@@ -28,12 +28,8 @@ public class Landlord implements IBaseEntity {
     private String login;
     private String password;
 
-    @Override
-    public Long getId() {
-        return null;
-    }
 
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "premises")
-    private List<Grade> gradeList;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "landlord")
+    private List<Premises> premisesList;
 }
