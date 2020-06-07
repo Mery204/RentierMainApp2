@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 
 @Controller
 @RequestMapping(path = "/landlord")
@@ -22,16 +20,12 @@ public class LandlordController {
         return "landlord_form";
     }
 
-//    @PostMapping("/add")
-//    public String landlordAdd(Landlord landlord) {
-//
-//        landlordService.add(landlord);
-//        return "redirect:/landlord/list";
-//    }
+    @PostMapping("/add")
+    public String landlordAdd(Landlord landlord) {
 
-//    @GetMapping("/list")
-//    public String landlordList(Model model) {
-//        model.addAttribute("listOfLandlords", landlordService.getBazaDanych());
-//        return "landlord_list";
-//    }
+        landlordService.add(landlord);
+        return "redirect:/landlord/list";
+    }
+
+
 }

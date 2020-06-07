@@ -7,20 +7,21 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class LandlordService {
 
 
-//    @Autowired
-//    private LandlordRepository landlordRepository;
-//
-//    public void add(Landlord landlord) {
-//        landlordRepository.save(landlord);
-//    }
-//
-//
-//    public List<Landlord> getBazaDanych() {
-//        return landlordRepository.findAll();
-//    }
+    @Autowired
+    private LandlordRepository landlordRepository;
+
+    public void add(Landlord landlord) {
+        landlordRepository.save(landlord);
+    }
+
+
+    public List<Landlord> getBazaDanych() {
+        return landlordRepository.findAll();
+    }
 
 }

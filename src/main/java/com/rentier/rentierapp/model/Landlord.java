@@ -1,15 +1,12 @@
 package com.rentier.rentierapp.model;
 
-import com.rentier.rentierapp.model.IBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -35,4 +32,8 @@ public class Landlord implements IBaseEntity {
     public Long getId() {
         return null;
     }
+
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "premises")
+    private List<Grade> gradeList;
 }
